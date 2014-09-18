@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+ "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+ "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+ 
+<tiles-definitions>
+	<!-- jsp파일을 조립하여 layoutAll.jsp에 연결하는 부분 -->
+
+	
+ <definition name="top_menu3" extends="default_layout">
+  	<put-attribute name="top_menu" value="" />
+  	<put-attribute name="include_js" value="/WEB-INF/views/include_js.jsp" />
+ </definition>
+ 
+ <definition name="top_menu4" extends="default_layout">
+  	
+  	<put-attribute name="include_js" value="" />
+ </definition>
+
+
+
+</tiles-definitions>

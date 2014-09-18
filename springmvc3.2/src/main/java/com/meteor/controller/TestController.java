@@ -1,7 +1,5 @@
 package com.meteor.controller;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.Callable;
 
@@ -30,16 +28,14 @@ public class TestController {
 	 */
 	
 	@RequestMapping(value = "/ni", method = RequestMethod.GET)
-	//public String home(Locale locale, Model model) {
-	//public Callable<String> home(Locale locale, Model model, HttpServletResponse response) {
 	public @ResponseBody Callable<String> home(Locale locale, Model model, HttpServletResponse response) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		
+		/*
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		
 		String formattedDate = dateFormat.format(date);
-		
+		*/
 		
 		System.out.println( response );
 		
@@ -50,11 +46,12 @@ public class TestController {
 			@Override
 			public String call() throws Exception {
 				// TODO Auto-generated method stub
-				Task task = new Task();
+				//Task task = new Task();
 				
 				for(int f=0; f<2;f++){
 					Thread.sleep(2000);
-					task.runner();	
+					//task.runner();
+					System.out.println( System.currentTimeMillis() );
 				}
 				
 				return "home";
@@ -62,7 +59,14 @@ public class TestController {
 		};
 		
 	}
-	
+
+	@RequestMapping(value = "/ni2", method = RequestMethod.GET)
+	public String home21231(Locale locale, Model model, HttpServletResponse response) {
+		Task task = new Task();
+		task.runner();
+		return "home";
+		
+	}
 	////////////////
 		
 	

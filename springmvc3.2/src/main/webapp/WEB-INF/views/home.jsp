@@ -22,6 +22,6 @@
 			alert($("#tex").val());
 		});
 	</script>
-
+	
 </body>
 </html>
